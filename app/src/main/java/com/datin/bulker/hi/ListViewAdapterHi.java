@@ -38,7 +38,6 @@ public class ListViewAdapterHi extends ArrayAdapter<HiItem> {
         View listViewItem = inflater.inflate(R.layout.hi_list_item, null, true);
 
         TextView textViewJudul = listViewItem.findViewById(R.id.textViewJudul);
-        TextView textViewDeskripsi = listViewItem.findViewById(R.id.textViewDeskripsi);
         TextView textViewTahun = listViewItem.findViewById(R.id.textViewTahun);
         TextView textViewTanggal = listViewItem.findViewById(R.id.textViewTanggal);
         ImageView imgVIew = listViewItem.findViewById(R.id.Cover);
@@ -47,7 +46,6 @@ public class ListViewAdapterHi extends ArrayAdapter<HiItem> {
         HiItem HiItem = HiItemList.get(position);
 
         textViewJudul.setText(HiItem.getJudul());
-        textViewDeskripsi.setText(Html.fromHtml(HiItem.getDeskripsi()));
         textViewTahun.setText(HiItem.getCreated_at());
         textViewTanggal.setText(HiItem.getTh_id());
         textViewTanggal.setText(HiItem.getFile());
