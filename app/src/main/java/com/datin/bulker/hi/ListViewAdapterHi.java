@@ -1,6 +1,7 @@
 package com.datin.bulker.hi;
 
 import android.content.Context;
+import android.text.Html;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -46,10 +47,10 @@ public class ListViewAdapterHi extends ArrayAdapter<HiItem> {
         HiItem HiItem = HiItemList.get(position);
 
         textViewJudul.setText(HiItem.getJudul());
-        textViewDeskripsi.setText(HiItem.getDeskripsi());
-        textViewTahun.setText(HiItem.getTahun());
-        textViewTanggal.setText(HiItem.getTanggal());
-
+        textViewDeskripsi.setText(Html.fromHtml(HiItem.getDeskripsi()));
+        textViewTahun.setText(HiItem.getCreated_at());
+        textViewTanggal.setText(HiItem.getTh_id());
+        textViewTanggal.setText(HiItem.getFile());
         Glide.with(context).load(HiItem.getCover()).into(imgVIew);
 
         return listViewItem;

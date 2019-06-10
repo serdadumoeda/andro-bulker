@@ -70,8 +70,8 @@ public class Hiwas extends AppCompatActivity {
                                 HiItem HiItem = new HiItem(
                                         playerObject.getString("judul"),
                                         playerObject.getString("deskripsi"),
-                                        playerObject.getString("created_at"),
                                         playerObject.getString("th_id"),
+                                        playerObject.getString("created_at"),
                                         playerObject.getString("file"),
                                         playerObject.getString("cover"));
 

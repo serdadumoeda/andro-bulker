@@ -10,14 +10,14 @@
 
     <TextView
         android:text="No"
-        android:id="@+id/tvNo"
+        android:id="@+id/tvJudul"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:textStyle="bold"/>
 
     <TextView
         android:text="Nama"
-        android:id="@+id/tvNama"
+        android:id="@+id/tvDeskripsi"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content" />
 

@@ -5,14 +5,15 @@ import android.os.Parcelable;
 
 
 public class HiItem implements Parcelable{
-    private String judul, deskripsi, tahun, tanggal, cover;
+    private String judul, deskripsi, th_id, created_at, cover, file;
 
-    public HiItem(String judul, String deskripsi, String tahun, String tanggal, String cover ) {
+    public HiItem(String judul, String deskripsi, String th_id, String created_at, String cover, String file ) {
         this.judul = judul;
         this.deskripsi = deskripsi;
-        this.tahun = tahun;
-        this.tanggal = tanggal;
+        this.th_id = th_id;
+        this.created_at = created_at;
         this.cover = cover;
+        this.file = file;
     }
 
 
@@ -24,16 +25,20 @@ public class HiItem implements Parcelable{
         return deskripsi;
     }
 
-    public String getTahun() {
-        return tahun;
+    public String getTh_id() {
+        return th_id;
     }
 
-    public String getTanggal(){
-        return tanggal;
+    public String getCreated_at(){
+        return created_at;
     }
 
     public String getCover() {
         return cover;
+    }
+
+    public String getFile() {
+        return file;
     }
 
     public void setJudul(String judul) {
@@ -44,16 +49,20 @@ public class HiItem implements Parcelable{
         this.deskripsi = deskripsi;
     }
 
-    public void setTahun(String tahun) {
-        this.tahun = tahun;
+    public void setTh_id(String th_id) {
+        this.th_id = th_id;
     }
 
-    public void setTanggal(String tanggal) {
-        this.tanggal = tanggal;
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
     }
 
     public void setCover(String cover) {
         this.cover = cover;
+    }
+
+    public void setFile(String file) {
+        this.file = file;
     }
 
     @Override
@@ -65,19 +74,18 @@ public class HiItem implements Parcelable{
     public void writeToParcel(Parcel parcel, int i) {
         parcel.writeString(this.judul);
         parcel.writeString(this.deskripsi);
-        parcel.writeString(this.tahun);
-        parcel.writeString(this.tanggal);
+        parcel.writeString(this.th_id);
+        parcel.writeString(this.created_at);
         parcel.writeString(this.cover);
+        parcel.writeString(this.file);
     }
 
-    public HiItem(String judul, String deskripsi, String created_at, String th_id, String file, String cover){
-    }
 
     protected HiItem(Parcel in ){
         this.judul = in.readString();
         this.deskripsi = in.readString();
-        this.tahun = in.readString();
-        this.tanggal = in.readString();
+        this.created_at = in.readString();
+        this.th_id = in.readString();
         this.cover = in.readString();
     }
 
