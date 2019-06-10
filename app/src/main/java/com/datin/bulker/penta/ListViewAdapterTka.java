@@ -14,15 +14,15 @@ import com.datin.bulker.R;
 import java.util.List;
 
 
-public class ListViewAdapter extends ArrayAdapter<PasarKerjaItem> {
+public class ListViewAdapterTka extends ArrayAdapter<TenagaKerjaAsingItem> {
 
-    private List<PasarKerjaItem> PasarKerjaItemList;
+    private List<TenagaKerjaAsingItem> TenagaKerjaAsingItemList;
 
     private Context context;
 
-    public ListViewAdapter(List<PasarKerjaItem> PasarKerjaItemList, Context context) {
-        super(context, R.layout.penta_pasar_kerja_list_item, PasarKerjaItemList);
-        this.PasarKerjaItemList = PasarKerjaItemList;
+    public ListViewAdapterTka(List<TenagaKerjaAsingItem> TenagaKerjaAsingItemList, Context context) {
+        super(context, R.layout.penta_pasar_kerja_list_item, TenagaKerjaAsingItemList);
+        this.TenagaKerjaAsingItemList = TenagaKerjaAsingItemList;
         this.context = context;
     }
 
@@ -42,14 +42,14 @@ public class ListViewAdapter extends ArrayAdapter<PasarKerjaItem> {
         ImageView imgVIew = listViewItem.findViewById(R.id.Poster);
 
 
-        PasarKerjaItem PasarKerjaItem = PasarKerjaItemList.get(position);
+        TenagaKerjaAsingItem TenagaKerjaAsingItem = TenagaKerjaAsingItemList.get(position);
 
-        textViewNo.setText(PasarKerjaItem.getNo());
-        textViewName.setText(PasarKerjaItem.getName());
-        textViewBirth_date.setText(PasarKerjaItem.getBirth_date());
-        textViewPosition.setText(PasarKerjaItem.getPosition());
+        textViewNo.setText(TenagaKerjaAsingItem.getNo());
+        textViewName.setText(TenagaKerjaAsingItem.getName());
+        textViewBirth_date.setText(TenagaKerjaAsingItem.getBirth_date());
+        textViewPosition.setText(TenagaKerjaAsingItem.getPosition());
 
-        Glide.with(context).load(PasarKerjaItem.getPoster()).into(imgVIew);
+        Glide.with(context).load(TenagaKerjaAsingItem.getPoster()).into(imgVIew);
 
         return listViewItem;
     }

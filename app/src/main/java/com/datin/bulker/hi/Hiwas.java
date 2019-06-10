@@ -1,4 +1,4 @@
-package com.datin.bulker.penta;
+package com.datin.bulker.hi;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -15,7 +15,6 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.datin.bulker.R;
-
 import org.json.JSONArray;
 import org.json.JSONException;
 import org.json.JSONObject;
@@ -23,27 +22,27 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PentaPasarKerja extends AppCompatActivity {
-    private static final String JSON_URL = "https://azharsaepudin.github.io/FootBallPlayer/AllPlayer.json";
+public class Hiwas extends AppCompatActivity {
+    private static final String JSON_URL = "https://buletinnaker.kemnaker.go.id/api/hi";
     ListView listView;
-    private List<PasarKerjaItem> PasarKerjaItemList;
+    private List<HiItem> HiItemList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_penta_pasar_kerja);
+        setContentView(R.layout.activity_hiwas);
 
         listView =  findViewById(R.id.listView);
-        PasarKerjaItemList = new ArrayList<>();
+        HiItemList = new ArrayList<>();
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
-                PasarKerjaItem PasarKerjaItem = PasarKerjaItemList.get(position);
+                HiItem HiItem = HiItemList.get(position);
 
-                Intent i = new Intent(getApplicationContext(), DetailPasarKerja.class);
-                i.putExtra(DetailPasarKerja.EXTRA_PLAYER, PasarKerjaItem);
+                Intent i = new Intent(getApplicationContext(), DetailHi.class);
+                i.putExtra(DetailHi.EXTRA_PLAYER, HiItem);
                 startActivity(i);
 
 
@@ -61,23 +60,25 @@ public class PentaPasarKerja extends AppCompatActivity {
 
                         try {
                             JSONObject obj = new JSONObject(response);
-                            JSONArray playerArray = obj.getJSONArray("result");
+                            JSONArray playerArray = obj.getJSONArray("data");
 
                             for (int i = 0; i < playerArray.length(); i++) {
 
                                 JSONObject playerObject = playerArray.getJSONObject(i);
 
 
-                                PasarKerjaItem PasarKerjaItem = new PasarKerjaItem(playerObject.getString("no"),
-                                        playerObject.getString("name"),
-                                        playerObject.getString("Position"),
-                                        playerObject.getString("birth_date"),
-                                        playerObject.getString("Poster"));
+                                HiItem HiItem = new HiItem(
+                                        playerObject.getString("judul"),
+                                        playerObject.getString("deskripsi"),
+                                        playerObject.getString("created_at"),
+                                        playerObject.getString("th_id"),
+                                        playerObject.getString("file"),
+                                        playerObject.getString("cover"));
 
-                                PasarKerjaItemList.add(PasarKerjaItem);
+                                HiItemList.add(HiItem);
                             }
 
-                            ListViewAdapter adapter = new ListViewAdapter(PasarKerjaItemList, getApplicationContext());
+                            ListViewAdapterHi adapter = new ListViewAdapterHi(HiItemList, getApplicationContext());
 
                             listView.setAdapter(adapter);
 

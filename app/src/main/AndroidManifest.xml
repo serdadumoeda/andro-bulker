@@ -11,12 +11,28 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".penta.PentaPasarKerja"></activity>
+        <activity android:name=".hi.DetailHi"></activity>
+
+        <activity
+            android:name=".penta.DetailTenagaKerjaAsing"
+            android:label="Detail Tenaga Kerja Asing" />
+
+        <activity
+            android:name=".penta.PentaTenagaKerjaAsing"
+            android:label="Tenaga Kerja Asing" />
+        <activity
+            android:name=".penta.PentaPasarKerja"
+            android:label="Pasar Kerja" />
+        <activity
+            android:name=".penta.DetailPasarKerja"
+            android:label="Detail Pasar Kerja" />
         <activity android:name=".Ku" />
         <activity android:name=".K3" />
-        <activity android:name=".Hiwas" />
+        <activity android:name=".hi.Hiwas" android:label="Hubungan Industrial dan Pengawasan" />
         <activity android:name=".Lattas" />
-        <activity android:name=".Penta" />
+        <activity
+            android:name=".Penta"
+            android:label="Penempatan dan Perluasan Kesempatan Kerja" />
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme" />

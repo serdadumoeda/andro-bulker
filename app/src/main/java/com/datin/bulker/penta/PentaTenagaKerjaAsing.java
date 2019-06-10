@@ -23,10 +23,10 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PentaPasarKerja extends AppCompatActivity {
+public class PentaTenagaKerjaAsing extends AppCompatActivity {
     private static final String JSON_URL = "https://azharsaepudin.github.io/FootBallPlayer/AllPlayer.json";
     ListView listView;
-    private List<PasarKerjaItem> PasarKerjaItemList;
+    private List<TenagaKerjaAsingItem> TenagaKerjaAsingItemList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -34,16 +34,16 @@ public class PentaPasarKerja extends AppCompatActivity {
         setContentView(R.layout.activity_penta_pasar_kerja);
 
         listView =  findViewById(R.id.listView);
-        PasarKerjaItemList = new ArrayList<>();
+        TenagaKerjaAsingItemList = new ArrayList<>();
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
-                PasarKerjaItem PasarKerjaItem = PasarKerjaItemList.get(position);
+                TenagaKerjaAsingItem TenagaKerjaAsingItem = TenagaKerjaAsingItemList.get(position);
 
-                Intent i = new Intent(getApplicationContext(), DetailPasarKerja.class);
-                i.putExtra(DetailPasarKerja.EXTRA_PLAYER, PasarKerjaItem);
+                Intent i = new Intent(getApplicationContext(), DetailTenagaKerjaAsing.class);
+                i.putExtra(DetailTenagaKerjaAsing.EXTRA_PLAYER, TenagaKerjaAsingItem);
                 startActivity(i);
 
 
@@ -68,16 +68,16 @@ public class PentaPasarKerja extends AppCompatActivity {
                                 JSONObject playerObject = playerArray.getJSONObject(i);
 
 
-                                PasarKerjaItem PasarKerjaItem = new PasarKerjaItem(playerObject.getString("no"),
+                                TenagaKerjaAsingItem TenagaKerjaAsingItem = new TenagaKerjaAsingItem(playerObject.getString("no"),
                                         playerObject.getString("name"),
                                         playerObject.getString("Position"),
                                         playerObject.getString("birth_date"),
                                         playerObject.getString("Poster"));
 
-                                PasarKerjaItemList.add(PasarKerjaItem);
+                                TenagaKerjaAsingItemList.add(TenagaKerjaAsingItem);
                             }
 
-                            ListViewAdapter adapter = new ListViewAdapter(PasarKerjaItemList, getApplicationContext());
+                            ListViewAdapterTka adapter = new ListViewAdapterTka(TenagaKerjaAsingItemList, getApplicationContext());
 
                             listView.setAdapter(adapter);
 
