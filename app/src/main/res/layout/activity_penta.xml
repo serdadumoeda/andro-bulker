@@ -7,9 +7,10 @@
     android:padding="16dp">
 
     <android.support.v7.widget.CardView
+        android:onClick="pasarKerja"
         android:foreground="?android:attr/selectableItemBackground"
         android:clickable="true"
-        android:id="@+id/android_card_view_example"
+        android:id="@+id/android_card_view_pasarKerja"
         android:layout_width="match_parent"
         android:layout_weight="1"
         android:layout_height="0dp">
@@ -106,7 +107,7 @@
     <android.support.v7.widget.CardView
         android:foreground="?android:attr/selectableItemBackground"
         android:clickable="true"
-        android:id="@+id/android_card_view_example3"
+        android:id="@+id/android_card_view_example7"
         android:layout_width="match_parent"
         android:layout_weight="1"
         android:layout_height="0dp"
@@ -121,7 +122,7 @@
 
 
             <TextView
-                android:id="@+id/cardview_list_title3"
+                android:id="@+id/cardview_list_title7"
                 android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
                 android:layout_alignParentTop="true"
