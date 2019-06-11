@@ -7,6 +7,10 @@ import android.view.View;
 
 import com.datin.bulker.lattas.bnsp.LattasBnsp;
 import com.datin.bulker.lattas.intala.LattasIntala;
+import com.datin.bulker.lattas.lembaga.LattasLembaga;
+import com.datin.bulker.lattas.magang.LattasMagang;
+import com.datin.bulker.lattas.prod.LattasProd;
+import com.datin.bulker.lattas.stankom.LattasStankom;
 import com.datin.bulker.penta.PentaPasarKerja;
 
 public class Lattas extends AppCompatActivity {
@@ -31,25 +35,25 @@ public class Lattas extends AppCompatActivity {
 
     public void stankom(View view){
         Intent intent= new Intent();
-        intent.setClass(Lattas.this, LattasBnsp.class);
+        intent.setClass(Lattas.this, LattasStankom.class);
         startActivity(intent);
     }
 
     public void magang(View view){
         Intent intent= new Intent();
-        intent.setClass(Lattas.this, LattasBnsp.class);
+        intent.setClass(Lattas.this, LattasMagang.class);
         startActivity(intent);
     }
 
     public void prod(View view){
         Intent intent= new Intent();
-        intent.setClass(Lattas.this, LattasBnsp.class);
+        intent.setClass(Lattas.this, LattasProd.class);
         startActivity(intent);
     }
 
     public void lembaga(View view){
         Intent intent= new Intent();
-        intent.setClass(Lattas.this, LattasBnsp.class);
+        intent.setClass(Lattas.this, LattasLembaga.class);
         startActivity(intent);
     }
 }
