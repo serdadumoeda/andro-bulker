@@ -11,13 +11,19 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".penta.ppkk.DetailPpkk"></activity>
+        <activity android:name=".lattas.lembaga.DetailLembaga"></activity>
 
+        <activity android:name=".lattas.lembaga.LattasLembaga" />
+        <activity android:name=".lattas.intala.DetailIntala" />
+
+        <activity android:name=".lattas.intala.LattasIntala" />
+        <activity android:name=".lattas.bnsp.DetailBnsp" />
+
+        <activity android:name=".lattas.bnsp.LattasBnsp" />
+        <activity android:name=".penta.ppkk.DetailPpkk" />
         <activity android:name=".penta.ppkk.PentaPpkk" />
         <activity android:name=".penta.ptkdn.PentaPtkdn" />
-
         <activity android:name=".penta.ptkdn.DetailPtkdn" />
-
         <activity android:name=".penta.p3mi.PentaP3mi" />
         <activity android:name=".penta.p3mi.DetailP3mi" />
         <activity
