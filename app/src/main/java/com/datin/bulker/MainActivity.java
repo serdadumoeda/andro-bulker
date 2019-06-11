@@ -6,6 +6,8 @@ import android.os.Bundle;
 import android.view.View;
 
 import com.datin.bulker.hi.Hiwas;
+import com.datin.bulker.k3.K3;
+import com.datin.bulker.ku.Ku;
 
 public class MainActivity extends AppCompatActivity {
 

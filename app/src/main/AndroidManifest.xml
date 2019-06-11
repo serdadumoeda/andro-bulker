@@ -11,12 +11,14 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".hi.DetailHi"></activity>
-
+        <activity android:name=".ku.DetailKu" android:label="Detail Ketenagakerjaan Umum"></activity>
+        <activity android:name=".k3.DetailK3" android:label="Detail K3" />
+        <activity
+            android:name=".hi.DetailHi"
+            android:label="Detail Hiwas" />
         <activity
             android:name=".penta.DetailTenagaKerjaAsing"
             android:label="Detail Tenaga Kerja Asing" />
-
         <activity
             android:name=".penta.PentaTenagaKerjaAsing"
             android:label="Tenaga Kerja Asing" />
@@ -26,9 +28,11 @@
         <activity
             android:name=".penta.DetailPasarKerja"
             android:label="Detail Pasar Kerja" />
-        <activity android:name=".Ku" />
-        <activity android:name=".K3" />
-        <activity android:name=".hi.Hiwas" android:label="Hubungan Industrial dan Pengawasan" />
+        <activity android:name=".ku.Ku" android:label="Ketenagakerjaan Umum"/>
+        <activity android:name=".k3.K3" android:label="Kesehatan dan Keselamatan Kerja" />
+        <activity
+            android:name=".hi.Hiwas"
+            android:label="Hubungan Industrial dan Pengawasan" />
         <activity android:name=".Lattas" />
         <activity
             android:name=".Penta"
@@ -36,7 +40,9 @@
         <activity
             android:name=".MainActivity"
             android:theme="@style/AppTheme" />
-        <activity android:name=".SplashScreen">
+        <activity
+            android:name=".SplashScreen"
+            android:theme="@style/noTitleBar">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
