@@ -1,13 +1,13 @@
-package com.datin.bulker.penta;
+package com.datin.bulker.penta.ptkdn;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
 
-public class PasarKerjaItem implements Parcelable{
+public class PtkdnItem implements Parcelable{
     private String judul, deskripsi, th_id, created_at, cover, file;
 
-    public PasarKerjaItem(String judul, String deskripsi, String th_id, String created_at, String cover, String file ) {
+    public PtkdnItem(String judul, String deskripsi, String th_id, String created_at, String cover, String file ) {
         this.judul = judul;
         this.deskripsi = deskripsi;
         this.th_id = th_id;
@@ -81,7 +81,7 @@ public class PasarKerjaItem implements Parcelable{
     }
 
 
-    protected PasarKerjaItem(Parcel in ){
+    protected PtkdnItem(Parcel in ){
         this.judul = in.readString();
         this.deskripsi = in.readString();
         this.created_at = in.readString();
@@ -89,16 +89,16 @@ public class PasarKerjaItem implements Parcelable{
         this.cover = in.readString();
     }
 
-    public static final Parcelable.Creator<com.datin.bulker.penta.PasarKerjaItem> CREATOR = new Parcelable.Creator<com.datin.bulker.penta.PasarKerjaItem>(){
+    public static final Parcelable.Creator<com.datin.bulker.penta.ptkdn.PtkdnItem> CREATOR = new Parcelable.Creator<com.datin.bulker.penta.ptkdn.PtkdnItem>(){
 
         @Override
-        public com.datin.bulker.penta.PasarKerjaItem createFromParcel(Parcel source) {
-            return new com.datin.bulker.penta.PasarKerjaItem(source);
+        public com.datin.bulker.penta.ptkdn.PtkdnItem createFromParcel(Parcel source) {
+            return new com.datin.bulker.penta.ptkdn.PtkdnItem(source);
         }
 
         @Override
-        public com.datin.bulker.penta.PasarKerjaItem[] newArray(int size) {
-            return new com.datin.bulker.penta.PasarKerjaItem[size];
+        public com.datin.bulker.penta.ptkdn.PtkdnItem[] newArray(int size) {
+            return new com.datin.bulker.penta.ptkdn.PtkdnItem[size];
         }
     };
 }

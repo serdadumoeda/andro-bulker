@@ -1,4 +1,4 @@
-package com.datin.bulker.penta;
+package com.datin.bulker.penta.ptkdn;
 
 import android.content.Context;
 import android.text.Html;
@@ -11,20 +11,21 @@ import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
 import com.datin.bulker.R;
-import com.datin.bulker.penta.PasarKerjaItem;
+import com.datin.bulker.penta.ptkdn.PtkdnItem;
+import com.datin.bulker.penta.ptkdn.PtkdnItem;
 
 import java.util.List;
 
 
-public class ListViewAdapter extends ArrayAdapter<PasarKerjaItem> {
+public class ListViewAdapterPtkdn extends ArrayAdapter<PtkdnItem> {
 
-    private List<PasarKerjaItem> PasarKerjaItemList;
+    private List<PtkdnItem> PtkdnItemList;
 
     private Context context;
 
-    public ListViewAdapter(List<PasarKerjaItem> PasarKerjaItemList, Context context) {
-        super(context, R.layout.penta_pasar_kerja_list_item, PasarKerjaItemList);
-        this.PasarKerjaItemList = PasarKerjaItemList;
+    public ListViewAdapterPtkdn(List<PtkdnItem> PtkdnItemList, Context context) {
+        super(context, R.layout.penta_tenaga_kerja_asing_list_item, PtkdnItemList);
+        this.PtkdnItemList = PtkdnItemList;
         this.context = context;
     }
 
@@ -35,7 +36,7 @@ public class ListViewAdapter extends ArrayAdapter<PasarKerjaItem> {
 
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View listViewItem = inflater.inflate(R.layout.penta_pasar_kerja_list_item, null, true);
+        View listViewItem = inflater.inflate(R.layout.penta_tenaga_kerja_asing_list_item, null, true);
 
         TextView textViewJudul = listViewItem.findViewById(R.id.textViewJudul);
         TextView textViewTahun = listViewItem.findViewById(R.id.textViewTahun);
@@ -43,13 +44,13 @@ public class ListViewAdapter extends ArrayAdapter<PasarKerjaItem> {
         ImageView imgVIew = listViewItem.findViewById(R.id.Cover);
 
 
-        PasarKerjaItem PasarKerjaItem = PasarKerjaItemList.get(position);
+        PtkdnItem PtkdnItem = PtkdnItemList.get(position);
 
-        textViewJudul.setText(PasarKerjaItem.getJudul());
-        textViewTahun.setText(PasarKerjaItem.getCreated_at());
-        textViewTanggal.setText(PasarKerjaItem.getTh_id());
-        textViewTanggal.setText(PasarKerjaItem.getFile());
-        Glide.with(context).load(PasarKerjaItem.getCover()).into(imgVIew);
+        textViewJudul.setText(PtkdnItem.getJudul());
+        textViewTahun.setText(PtkdnItem.getCreated_at());
+        textViewTanggal.setText(PtkdnItem.getTh_id());
+        textViewTanggal.setText(PtkdnItem.getFile());
+        Glide.with(context).load(PtkdnItem.getCover()).into(imgVIew);
 
         return listViewItem;
     }

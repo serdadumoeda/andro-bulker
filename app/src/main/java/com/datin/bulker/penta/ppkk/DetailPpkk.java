@@ -1,4 +1,4 @@
-package com.datin.bulker.penta;
+package com.datin.bulker.penta.ppkk;
 
 import android.os.Bundle;
 import android.support.design.widget.CollapsingToolbarLayout;
@@ -7,10 +7,10 @@ import android.text.Html;
 import android.widget.TextView;
 
 import com.datin.bulker.R;
-import com.datin.bulker.penta.TenagaKerjaAsingItem;
+import com.datin.bulker.penta.ppkk.PpkkItem;
 
 
-public class DetailTenagaKerjaAsing extends AppCompatActivity {
+public class DetailPpkk extends AppCompatActivity {
 
     public static String EXTRA_PLAYER = "extra_player";
     TextView tvJudul, tvDeskripsi, tvTahun, tvTanggal;
@@ -31,12 +31,12 @@ public class DetailTenagaKerjaAsing extends AppCompatActivity {
         tvDeskripsi = findViewById(R.id.tvDeskripsi);
 
 
-        TenagaKerjaAsingItem TenagaKerjaAsingItem =  getIntent().getParcelableExtra(EXTRA_PLAYER);
+        PpkkItem PpkkItem =  getIntent().getParcelableExtra(EXTRA_PLAYER);
 
-        String judul = TenagaKerjaAsingItem.getJudul();
-        String tahun = TenagaKerjaAsingItem.getTh_id();
-        String tanggal = TenagaKerjaAsingItem.getCreated_at();
-        String deskripsi = TenagaKerjaAsingItem.getDeskripsi();
+        String judul = PpkkItem.getJudul();
+        String tahun = PpkkItem.getTh_id();
+        String tanggal = PpkkItem.getCreated_at();
+        String deskripsi = PpkkItem.getDeskripsi();
 
         tvJudul.setText(judul);
         collapsingToolbarLayout.setTitle(judul);

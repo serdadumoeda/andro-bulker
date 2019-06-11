@@ -73,6 +73,7 @@
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
+        android:onClick="p3mi"
         android:foreground="?android:attr/selectableItemBackground"
         android:clickable="true"
         android:id="@+id/android_card_view_example2"
@@ -105,6 +106,7 @@
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
+        android:onClick="ptkdn"
         android:foreground="?android:attr/selectableItemBackground"
         android:clickable="true"
         android:id="@+id/android_card_view_example7"
@@ -138,6 +140,7 @@
     </android.support.v7.widget.CardView>
 
     <android.support.v7.widget.CardView
+        android:onClick="ppkk"
         android:foreground="?android:attr/selectableItemBackground"
         android:clickable="true"
         android:id="@+id/android_card_view_example3"

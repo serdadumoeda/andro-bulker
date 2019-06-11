@@ -11,8 +11,21 @@
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
-        <activity android:name=".ku.DetailKu" android:label="Detail Ketenagakerjaan Umum"></activity>
-        <activity android:name=".k3.DetailK3" android:label="Detail K3" />
+        <activity android:name=".penta.ppkk.DetailPpkk"></activity>
+
+        <activity android:name=".penta.ppkk.PentaPpkk" />
+        <activity android:name=".penta.ptkdn.PentaPtkdn" />
+
+        <activity android:name=".penta.ptkdn.DetailPtkdn" />
+
+        <activity android:name=".penta.p3mi.PentaP3mi" />
+        <activity android:name=".penta.p3mi.DetailP3mi" />
+        <activity
+            android:name=".ku.DetailKu"
+            android:label="Detail Ketenagakerjaan Umum" />
+        <activity
+            android:name=".k3.DetailK3"
+            android:label="Detail K3" />
         <activity
             android:name=".hi.DetailHi"
             android:label="Detail Hiwas" />
@@ -28,8 +41,12 @@
         <activity
             android:name=".penta.DetailPasarKerja"
             android:label="Detail Pasar Kerja" />
-        <activity android:name=".ku.Ku" android:label="Ketenagakerjaan Umum"/>
-        <activity android:name=".k3.K3" android:label="Kesehatan dan Keselamatan Kerja" />
+        <activity
+            android:name=".ku.Ku"
+            android:label="Ketenagakerjaan Umum" />
+        <activity
+            android:name=".k3.K3"
+            android:label="Kesehatan dan Keselamatan Kerja" />
         <activity
             android:name=".hi.Hiwas"
             android:label="Hubungan Industrial dan Pengawasan" />

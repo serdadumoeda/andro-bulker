@@ -5,7 +5,7 @@
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".penta.DetailTenagaKerjaAsing"
+    tools:context=".penta.ptkdn.DetailPtkdn"
     android:background="#F7F6F6">
 
     <android.support.design.widget.AppBarLayout
@@ -75,7 +75,7 @@
                     <TextView
                         android:layout_width="wrap_content"
                         android:layout_height="wrap_content"
-                        android:text="Tenaga Kerja Asing"
+                        android:text="PTKDN"
                         android:layout_marginTop="5dp"
                         />
 

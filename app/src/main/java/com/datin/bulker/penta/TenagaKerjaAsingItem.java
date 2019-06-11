@@ -1,60 +1,68 @@
 package com.datin.bulker.penta;
 
 import android.os.Parcel;
-import android.os.Parcel;
 import android.os.Parcelable;
 
 
 public class TenagaKerjaAsingItem implements Parcelable{
-    private String no, name, Position, birth_date, Poster;
+    private String judul, deskripsi, th_id, created_at, cover, file;
 
-    public TenagaKerjaAsingItem(String no, String name, String Position, String birth_date, String Poster ) {
-        this.no = no;
-        this.name = name;
-        this.Position = Position;
-        this.birth_date = birth_date;
-        this.Poster = Poster;
+    public TenagaKerjaAsingItem(String judul, String deskripsi, String th_id, String created_at, String cover, String file ) {
+        this.judul = judul;
+        this.deskripsi = deskripsi;
+        this.th_id = th_id;
+        this.created_at = created_at;
+        this.cover = cover;
+        this.file = file;
     }
 
 
-    public String getNo() {
-        return no;
+    public String getJudul() {
+        return judul;
     }
 
-    public String getName() {
-        return name;
+    public String getDeskripsi() {
+        return deskripsi;
     }
 
-    public String getPosition() {
-        return Position;
+    public String getTh_id() {
+        return th_id;
     }
 
-    public String getBirth_date(){
-        return birth_date;
+    public String getCreated_at(){
+        return created_at;
     }
 
-    public String getPoster() {
-        return Poster;
+    public String getCover() {
+        return cover;
     }
 
-    public void setNo(String no) {
-        this.no = no;
+    public String getFile() {
+        return file;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setJudul(String judul) {
+        this.judul = judul;
     }
 
-    public void setPosition(String position) {
-        Position = position;
+    public void setDeskripsi(String deskripsi) {
+        this.deskripsi = deskripsi;
     }
 
-    public void setBirth_date(String birth_date) {
-        this.birth_date = birth_date;
+    public void setTh_id(String th_id) {
+        this.th_id = th_id;
     }
 
-    public void setPoster(String poster) {
-        Poster = poster;
+    public void setCreated_at(String created_at) {
+        this.created_at = created_at;
+    }
+
+    public void setCover(String cover) {
+        this.cover = cover;
+    }
+
+    public void setFile(String file) {
+        this.file = file;
     }
 
     @Override
@@ -64,34 +72,33 @@ public class TenagaKerjaAsingItem implements Parcelable{
 
     @Override
     public void writeToParcel(Parcel parcel, int i) {
-        parcel.writeString(this.no);
-        parcel.writeString(this.name);
-        parcel.writeString(this.Position);
-        parcel.writeString(this.birth_date);
-        parcel.writeString(this.Poster);
+        parcel.writeString(this.judul);
+        parcel.writeString(this.deskripsi);
+        parcel.writeString(this.th_id);
+        parcel.writeString(this.created_at);
+        parcel.writeString(this.cover);
+        parcel.writeString(this.file);
     }
 
-    public TenagaKerjaAsingItem(){
-    }
 
     protected TenagaKerjaAsingItem(Parcel in ){
-        this.no = in.readString();
-        this.name = in.readString();
-        this.Position = in.readString();
-        this.birth_date = in.readString();
-        this.Poster = in.readString();
+        this.judul = in.readString();
+        this.deskripsi = in.readString();
+        this.created_at = in.readString();
+        this.th_id = in.readString();
+        this.cover = in.readString();
     }
 
-    public static final Parcelable.Creator<TenagaKerjaAsingItem> CREATOR = new Parcelable.Creator<TenagaKerjaAsingItem>(){
+    public static final Parcelable.Creator<com.datin.bulker.penta.TenagaKerjaAsingItem> CREATOR = new Parcelable.Creator<com.datin.bulker.penta.TenagaKerjaAsingItem>(){
 
         @Override
-        public TenagaKerjaAsingItem createFromParcel(Parcel source) {
-            return new TenagaKerjaAsingItem(source);
+        public com.datin.bulker.penta.TenagaKerjaAsingItem createFromParcel(Parcel source) {
+            return new com.datin.bulker.penta.TenagaKerjaAsingItem(source);
         }
 
         @Override
-        public TenagaKerjaAsingItem[] newArray(int size) {
-            return new TenagaKerjaAsingItem[size];
+        public com.datin.bulker.penta.TenagaKerjaAsingItem[] newArray(int size) {
+            return new com.datin.bulker.penta.TenagaKerjaAsingItem[size];
         }
     };
 }

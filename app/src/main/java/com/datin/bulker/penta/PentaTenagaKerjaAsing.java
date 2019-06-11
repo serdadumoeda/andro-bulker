@@ -15,6 +15,9 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.datin.bulker.R;
+import com.datin.bulker.penta.DetailTenagaKerjaAsing;
+import com.datin.bulker.penta.TenagaKerjaAsingItem;
+import com.datin.bulker.penta.ListViewAdapterTka;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -24,14 +27,14 @@ import java.util.ArrayList;
 import java.util.List;
 
 public class PentaTenagaKerjaAsing extends AppCompatActivity {
-    private static final String JSON_URL = "https://azharsaepudin.github.io/FootBallPlayer/AllPlayer.json";
+    private static final String JSON_URL = "https://buletinnaker.kemnaker.go.id/api/tka";
     ListView listView;
     private List<TenagaKerjaAsingItem> TenagaKerjaAsingItemList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_penta_pasar_kerja);
+        setContentView(R.layout.activity_penta_tenaga_kerja_asing);
 
         listView =  findViewById(R.id.listView);
         TenagaKerjaAsingItemList = new ArrayList<>();
@@ -61,18 +64,20 @@ public class PentaTenagaKerjaAsing extends AppCompatActivity {
 
                         try {
                             JSONObject obj = new JSONObject(response);
-                            JSONArray playerArray = obj.getJSONArray("result");
+                            JSONArray playerArray = obj.getJSONArray("penta");
 
                             for (int i = 0; i < playerArray.length(); i++) {
 
                                 JSONObject playerObject = playerArray.getJSONObject(i);
 
 
-                                TenagaKerjaAsingItem TenagaKerjaAsingItem = new TenagaKerjaAsingItem(playerObject.getString("no"),
-                                        playerObject.getString("name"),
-                                        playerObject.getString("Position"),
-                                        playerObject.getString("birth_date"),
-                                        playerObject.getString("Poster"));
+                                TenagaKerjaAsingItem TenagaKerjaAsingItem = new TenagaKerjaAsingItem(
+                                        playerObject.getString("judul"),
+                                        playerObject.getString("deskripsi"),
+                                        playerObject.getString("th_id"),
+                                        playerObject.getString("created_at"),
+                                        playerObject.getString("file"),
+                                        playerObject.getString("cover"));
 
                                 TenagaKerjaAsingItemList.add(TenagaKerjaAsingItem);
                             }

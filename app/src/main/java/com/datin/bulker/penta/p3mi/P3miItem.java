@@ -1,13 +1,13 @@
-package com.datin.bulker.penta;
+package com.datin.bulker.penta.p3mi;
 
 import android.os.Parcel;
 import android.os.Parcelable;
 
 
-public class PasarKerjaItem implements Parcelable{
+public class P3miItem implements Parcelable{
     private String judul, deskripsi, th_id, created_at, cover, file;
 
-    public PasarKerjaItem(String judul, String deskripsi, String th_id, String created_at, String cover, String file ) {
+    public P3miItem(String judul, String deskripsi, String th_id, String created_at, String cover, String file ) {
         this.judul = judul;
         this.deskripsi = deskripsi;
         this.th_id = th_id;
@@ -81,7 +81,7 @@ public class PasarKerjaItem implements Parcelable{
     }
 
 
-    protected PasarKerjaItem(Parcel in ){
+    protected P3miItem(Parcel in ){
         this.judul = in.readString();
         this.deskripsi = in.readString();
         this.created_at = in.readString();
@@ -89,16 +89,16 @@ public class PasarKerjaItem implements Parcelable{
         this.cover = in.readString();
     }
 
-    public static final Parcelable.Creator<com.datin.bulker.penta.PasarKerjaItem> CREATOR = new Parcelable.Creator<com.datin.bulker.penta.PasarKerjaItem>(){
+    public static final Parcelable.Creator<com.datin.bulker.penta.p3mi.P3miItem> CREATOR = new Parcelable.Creator<com.datin.bulker.penta.p3mi.P3miItem>(){
 
         @Override
-        public com.datin.bulker.penta.PasarKerjaItem createFromParcel(Parcel source) {
-            return new com.datin.bulker.penta.PasarKerjaItem(source);
+        public com.datin.bulker.penta.p3mi.P3miItem createFromParcel(Parcel source) {
+            return new com.datin.bulker.penta.p3mi.P3miItem(source);
         }
 
         @Override
-        public com.datin.bulker.penta.PasarKerjaItem[] newArray(int size) {
-            return new com.datin.bulker.penta.PasarKerjaItem[size];
+        public com.datin.bulker.penta.p3mi.P3miItem[] newArray(int size) {
+            return new com.datin.bulker.penta.p3mi.P3miItem[size];
         }
     };
 }

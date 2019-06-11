@@ -1,5 +1,4 @@
-package com.datin.bulker.penta;
-
+package com.datin.bulker.penta.ppkk;
 
 import android.content.Intent;
 import android.support.v7.app.AppCompatActivity;
@@ -16,9 +15,12 @@ import com.android.volley.VolleyError;
 import com.android.volley.toolbox.StringRequest;
 import com.android.volley.toolbox.Volley;
 import com.datin.bulker.R;
-import com.datin.bulker.penta.DetailPasarKerja;
-import com.datin.bulker.penta.PasarKerjaItem;
-import com.datin.bulker.penta.ListViewAdapter;
+import com.datin.bulker.penta.p3mi.DetailP3mi;
+import com.datin.bulker.penta.p3mi.ListViewAdapterP3mi;
+import com.datin.bulker.penta.p3mi.P3miItem;
+import com.datin.bulker.penta.ppkk.DetailPpkk;
+import com.datin.bulker.penta.ppkk.ListViewAdapterPpkk;
+import com.datin.bulker.penta.ppkk.PpkkItem;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -27,10 +29,10 @@ import org.json.JSONObject;
 import java.util.ArrayList;
 import java.util.List;
 
-public class PentaPasarKerja extends AppCompatActivity {
-    private static final String JSON_URL = "https://buletinnaker.kemnaker.go.id/api/pasarkerja";
+public class PentaPpkk extends AppCompatActivity {
+    private static final String JSON_URL = "https://buletinnaker.kemnaker.go.id/api/ppkk";
     ListView listView;
-    private List<PasarKerjaItem> PasarKerjaItemList;
+    private List<PpkkItem> PpkkItemList;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -38,16 +40,16 @@ public class PentaPasarKerja extends AppCompatActivity {
         setContentView(R.layout.activity_penta_pasar_kerja);
 
         listView =  findViewById(R.id.listView);
-        PasarKerjaItemList = new ArrayList<>();
+        PpkkItemList = new ArrayList<>();
 
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> adapterView, View view, int position, long l) {
 
-                PasarKerjaItem PasarKerjaItem = PasarKerjaItemList.get(position);
+                PpkkItem PpkkItem = PpkkItemList.get(position);
 
-                Intent i = new Intent(getApplicationContext(), DetailPasarKerja.class);
-                i.putExtra(DetailPasarKerja.EXTRA_PLAYER, PasarKerjaItem);
+                Intent i = new Intent(getApplicationContext(), DetailPpkk.class);
+                i.putExtra(DetailPpkk.EXTRA_PLAYER, PpkkItem);
                 startActivity(i);
 
 
@@ -72,7 +74,7 @@ public class PentaPasarKerja extends AppCompatActivity {
                                 JSONObject playerObject = playerArray.getJSONObject(i);
 
 
-                                PasarKerjaItem PasarKerjaItem = new PasarKerjaItem(
+                                PpkkItem PpkkItem = new PpkkItem(
                                         playerObject.getString("judul"),
                                         playerObject.getString("deskripsi"),
                                         playerObject.getString("th_id"),
@@ -80,10 +82,10 @@ public class PentaPasarKerja extends AppCompatActivity {
                                         playerObject.getString("file"),
                                         playerObject.getString("cover"));
 
-                                PasarKerjaItemList.add(PasarKerjaItem);
+                                PpkkItemList.add(PpkkItem);
                             }
 
-                            ListViewAdapter adapter = new ListViewAdapter(PasarKerjaItemList, getApplicationContext());
+                            ListViewAdapterPpkk adapter = new ListViewAdapterPpkk(PpkkItemList, getApplicationContext());
 
                             listView.setAdapter(adapter);
 
