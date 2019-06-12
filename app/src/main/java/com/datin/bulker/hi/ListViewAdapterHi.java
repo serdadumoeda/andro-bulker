@@ -40,7 +40,7 @@ public class ListViewAdapterHi extends ArrayAdapter<HiItem> {
         TextView textViewJudul = listViewItem.findViewById(R.id.textViewJudul);
         TextView textViewTahun = listViewItem.findViewById(R.id.textViewTahun);
         TextView textViewTanggal = listViewItem.findViewById(R.id.textViewTanggal);
-        ImageView imgVIew = listViewItem.findViewById(R.id.Cover);
+        ImageView imgVIew = listViewItem.findViewById(R.id.imgVIew);
 
 
         HiItem HiItem = HiItemList.get(position);
@@ -48,8 +48,7 @@ public class ListViewAdapterHi extends ArrayAdapter<HiItem> {
         textViewJudul.setText(HiItem.getJudul());
         textViewTahun.setText(HiItem.getCreated_at());
         textViewTanggal.setText(HiItem.getTh_id());
-        textViewTanggal.setText(HiItem.getFile());
-        Glide.with(context).load(HiItem.getCover()).into(imgVIew);
+        Glide.with(context).load("https://buletinnaker.kemnaker.go.id/storage/coverpenta/"+HiItem.getFile()).into(imgVIew);
 
         return listViewItem;
     }

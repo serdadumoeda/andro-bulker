@@ -24,7 +24,7 @@ public class ListViewAdapterP3mi extends ArrayAdapter<P3miItem> {
     private Context context;
 
     public ListViewAdapterP3mi(List<P3miItem> P3miItemList, Context context) {
-        super(context, R.layout.penta_tenaga_kerja_asing_list_item, P3miItemList);
+        super(context, R.layout.activity_penta_p3mi_list_item, P3miItemList);
         this.P3miItemList = P3miItemList;
         this.context = context;
     }
@@ -36,12 +36,12 @@ public class ListViewAdapterP3mi extends ArrayAdapter<P3miItem> {
 
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View listViewItem = inflater.inflate(R.layout.penta_tenaga_kerja_asing_list_item, null, true);
+        View listViewItem = inflater.inflate(R.layout.activity_penta_p3mi_list_item, null, true);
 
         TextView textViewJudul = listViewItem.findViewById(R.id.textViewJudul);
         TextView textViewTahun = listViewItem.findViewById(R.id.textViewTahun);
         TextView textViewTanggal = listViewItem.findViewById(R.id.textViewTanggal);
-        ImageView imgVIew = listViewItem.findViewById(R.id.Cover);
+        ImageView imgVIew = listViewItem.findViewById(R.id.imgVIew);
 
 
         P3miItem P3miItem = P3miItemList.get(position);
@@ -49,8 +49,7 @@ public class ListViewAdapterP3mi extends ArrayAdapter<P3miItem> {
         textViewJudul.setText(P3miItem.getJudul());
         textViewTahun.setText(P3miItem.getCreated_at());
         textViewTanggal.setText(P3miItem.getTh_id());
-        textViewTanggal.setText(P3miItem.getFile());
-        Glide.with(context).load(P3miItem.getCover()).into(imgVIew);
+        Glide.with(context).load("https://buletinnaker.kemnaker.go.id/storage/coverpenta/"+P3miItem.getFile()).into(imgVIew);
 
         return listViewItem;
     }

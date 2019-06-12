@@ -41,7 +41,7 @@ public class ListViewAdapterBnsp extends ArrayAdapter<BnspItem> {
         TextView textViewJudul = listViewItem.findViewById(R.id.textViewJudul);
         TextView textViewTahun = listViewItem.findViewById(R.id.textViewTahun);
         TextView textViewTanggal = listViewItem.findViewById(R.id.textViewTanggal);
-        ImageView imgVIew = listViewItem.findViewById(R.id.Cover);
+        ImageView imgVIew = listViewItem.findViewById(R.id.imgVIew);
 
 
         BnspItem BnspItem = BnspItemList.get(position);
@@ -49,8 +49,7 @@ public class ListViewAdapterBnsp extends ArrayAdapter<BnspItem> {
         textViewJudul.setText(BnspItem.getJudul());
         textViewTahun.setText(BnspItem.getCreated_at());
         textViewTanggal.setText(BnspItem.getTh_id());
-        textViewTanggal.setText(BnspItem.getFile());
-        Glide.with(context).load(BnspItem.getCover()).into(imgVIew);
+        Glide.with(context).load("https://buletinnaker.kemnaker.go.id/storage/coverpenta/"+BnspItem.getFile()).into(imgVIew);
 
         return listViewItem;
     }

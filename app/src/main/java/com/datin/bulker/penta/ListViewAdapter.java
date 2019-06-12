@@ -40,7 +40,7 @@ public class ListViewAdapter extends ArrayAdapter<PasarKerjaItem> {
         TextView textViewJudul = listViewItem.findViewById(R.id.textViewJudul);
         TextView textViewTahun = listViewItem.findViewById(R.id.textViewTahun);
         TextView textViewTanggal = listViewItem.findViewById(R.id.textViewTanggal);
-        ImageView imgVIew = listViewItem.findViewById(R.id.Cover);
+        ImageView imgVIew = listViewItem.findViewById(R.id.imgVIew);
 
 
         PasarKerjaItem PasarKerjaItem = PasarKerjaItemList.get(position);
@@ -48,8 +48,7 @@ public class ListViewAdapter extends ArrayAdapter<PasarKerjaItem> {
         textViewJudul.setText(PasarKerjaItem.getJudul());
         textViewTahun.setText(PasarKerjaItem.getCreated_at());
         textViewTanggal.setText(PasarKerjaItem.getTh_id());
-        textViewTanggal.setText(PasarKerjaItem.getFile());
-        Glide.with(context).load(PasarKerjaItem.getCover()).into(imgVIew);
+        Glide.with(context).load("https://buletinnaker.kemnaker.go.id/storage/coverpenta/"+PasarKerjaItem.getFile()).into(imgVIew);
 
         return listViewItem;
     }

@@ -40,7 +40,7 @@ public class ListViewAdapterKu extends ArrayAdapter<KuItem> {
         TextView textViewJudul = listViewItem.findViewById(R.id.textViewJudul);
         TextView textViewTahun = listViewItem.findViewById(R.id.textViewTahun);
         TextView textViewTanggal = listViewItem.findViewById(R.id.textViewTanggal);
-        ImageView imgVIew = listViewItem.findViewById(R.id.Cover);
+        ImageView imgVIew = listViewItem.findViewById(R.id.imgVIew);
 
 
         KuItem KuItem = KuItemList.get(position);
@@ -48,8 +48,7 @@ public class ListViewAdapterKu extends ArrayAdapter<KuItem> {
         textViewJudul.setText(KuItem.getJudul());
         textViewTahun.setText(KuItem.getCreated_at());
         textViewTanggal.setText(KuItem.getTh_id());
-        textViewTanggal.setText(KuItem.getFile());
-        Glide.with(context).load(KuItem.getCover()).into(imgVIew);
+        Glide.with(context).load("https://buletinnaker.kemnaker.go.id/storage/coverpenta/"+KuItem.getFile()).into(imgVIew);
 
         return listViewItem;
     }

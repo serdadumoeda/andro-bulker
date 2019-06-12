@@ -24,7 +24,7 @@ public class ListViewAdapterPtkdn extends ArrayAdapter<PtkdnItem> {
     private Context context;
 
     public ListViewAdapterPtkdn(List<PtkdnItem> PtkdnItemList, Context context) {
-        super(context, R.layout.penta_tenaga_kerja_asing_list_item, PtkdnItemList);
+        super(context, R.layout.penta_ptkdn_list_item, PtkdnItemList);
         this.PtkdnItemList = PtkdnItemList;
         this.context = context;
     }
@@ -36,12 +36,12 @@ public class ListViewAdapterPtkdn extends ArrayAdapter<PtkdnItem> {
 
         LayoutInflater inflater = LayoutInflater.from(context);
 
-        View listViewItem = inflater.inflate(R.layout.penta_tenaga_kerja_asing_list_item, null, true);
+        View listViewItem = inflater.inflate(R.layout.penta_ptkdn_list_item, null, true);
 
         TextView textViewJudul = listViewItem.findViewById(R.id.textViewJudul);
         TextView textViewTahun = listViewItem.findViewById(R.id.textViewTahun);
         TextView textViewTanggal = listViewItem.findViewById(R.id.textViewTanggal);
-        ImageView imgVIew = listViewItem.findViewById(R.id.Cover);
+        ImageView imgVIew = listViewItem.findViewById(R.id.imgVIew);
 
 
         PtkdnItem PtkdnItem = PtkdnItemList.get(position);
@@ -49,8 +49,7 @@ public class ListViewAdapterPtkdn extends ArrayAdapter<PtkdnItem> {
         textViewJudul.setText(PtkdnItem.getJudul());
         textViewTahun.setText(PtkdnItem.getCreated_at());
         textViewTanggal.setText(PtkdnItem.getTh_id());
-        textViewTanggal.setText(PtkdnItem.getFile());
-        Glide.with(context).load(PtkdnItem.getCover()).into(imgVIew);
+        Glide.with(context).load("https://buletinnaker.kemnaker.go.id/storage/coverpenta/"+PtkdnItem.getFile()).into(imgVIew);
 
         return listViewItem;
     }

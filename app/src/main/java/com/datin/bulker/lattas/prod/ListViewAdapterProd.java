@@ -40,7 +40,7 @@ public class ListViewAdapterProd extends ArrayAdapter<ProdItem> {
         TextView textViewJudul = listViewItem.findViewById(R.id.textViewJudul);
         TextView textViewTahun = listViewItem.findViewById(R.id.textViewTahun);
         TextView textViewTanggal = listViewItem.findViewById(R.id.textViewTanggal);
-        ImageView imgVIew = listViewItem.findViewById(R.id.Cover);
+        ImageView imgVIew = listViewItem.findViewById(R.id.imgVIew);
 
 
         ProdItem ProdItem = ProdItemList.get(position);
@@ -48,8 +48,7 @@ public class ListViewAdapterProd extends ArrayAdapter<ProdItem> {
         textViewJudul.setText(ProdItem.getJudul());
         textViewTahun.setText(ProdItem.getCreated_at());
         textViewTanggal.setText(ProdItem.getTh_id());
-        textViewTanggal.setText(ProdItem.getFile());
-        Glide.with(context).load(ProdItem.getCover()).into(imgVIew);
+        Glide.with(context).load("https://buletinnaker.kemnaker.go.id/storage/coverlattas/"+ProdItem.getFile()).into(imgVIew);
 
         return listViewItem;
     }

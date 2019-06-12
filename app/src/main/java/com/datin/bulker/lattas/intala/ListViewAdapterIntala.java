@@ -40,7 +40,7 @@ public class ListViewAdapterIntala extends ArrayAdapter<IntalaItem> {
         TextView textViewJudul = listViewItem.findViewById(R.id.textViewJudul);
         TextView textViewTahun = listViewItem.findViewById(R.id.textViewTahun);
         TextView textViewTanggal = listViewItem.findViewById(R.id.textViewTanggal);
-        ImageView imgVIew = listViewItem.findViewById(R.id.Cover);
+        ImageView imgVIew = listViewItem.findViewById(R.id.imgVIew);
 
 
         IntalaItem IntalaItem = IntalaItemList.get(position);
@@ -48,8 +48,7 @@ public class ListViewAdapterIntala extends ArrayAdapter<IntalaItem> {
         textViewJudul.setText(IntalaItem.getJudul());
         textViewTahun.setText(IntalaItem.getCreated_at());
         textViewTanggal.setText(IntalaItem.getTh_id());
-        textViewTanggal.setText(IntalaItem.getFile());
-        Glide.with(context).load(IntalaItem.getCover()).into(imgVIew);
+        Glide.with(context).load("https://buletinnaker.kemnaker.go.id/storage/coverlattas/"+IntalaItem.getFile()).into(imgVIew);
 
         return listViewItem;
     }

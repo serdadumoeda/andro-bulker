@@ -41,7 +41,7 @@ public class ListViewAdapterTka extends ArrayAdapter<TenagaKerjaAsingItem> {
         TextView textViewJudul = listViewItem.findViewById(R.id.textViewJudul);
         TextView textViewTahun = listViewItem.findViewById(R.id.textViewTahun);
         TextView textViewTanggal = listViewItem.findViewById(R.id.textViewTanggal);
-        ImageView imgVIew = listViewItem.findViewById(R.id.Cover);
+        ImageView imgVIew = listViewItem.findViewById(R.id.imgVIew);
 
 
         TenagaKerjaAsingItem TenagaKerjaAsingItem = TenagaKerjaAsingItemList.get(position);
@@ -49,8 +49,7 @@ public class ListViewAdapterTka extends ArrayAdapter<TenagaKerjaAsingItem> {
         textViewJudul.setText(TenagaKerjaAsingItem.getJudul());
         textViewTahun.setText(TenagaKerjaAsingItem.getCreated_at());
         textViewTanggal.setText(TenagaKerjaAsingItem.getTh_id());
-        textViewTanggal.setText(TenagaKerjaAsingItem.getFile());
-        Glide.with(context).load(TenagaKerjaAsingItem.getCover()).into(imgVIew);
+        Glide.with(context).load("https://buletinnaker.kemnaker.go.id/storage/coverpenta/"+TenagaKerjaAsingItem.getFile()).into(imgVIew);
 
         return listViewItem;
     }

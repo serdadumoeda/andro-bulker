@@ -40,7 +40,7 @@ public class ListViewAdapterMagang extends ArrayAdapter<MagangItem> {
         TextView textViewJudul = listViewItem.findViewById(R.id.textViewJudul);
         TextView textViewTahun = listViewItem.findViewById(R.id.textViewTahun);
         TextView textViewTanggal = listViewItem.findViewById(R.id.textViewTanggal);
-        ImageView imgVIew = listViewItem.findViewById(R.id.Cover);
+        ImageView imgVIew = listViewItem.findViewById(R.id.imgVIew);
 
 
         MagangItem MagangItem = MagangItemList.get(position);
@@ -48,8 +48,7 @@ public class ListViewAdapterMagang extends ArrayAdapter<MagangItem> {
         textViewJudul.setText(MagangItem.getJudul());
         textViewTahun.setText(MagangItem.getCreated_at());
         textViewTanggal.setText(MagangItem.getTh_id());
-        textViewTanggal.setText(MagangItem.getFile());
-        Glide.with(context).load(MagangItem.getCover()).into(imgVIew);
+        Glide.with(context).load("https://buletinnaker.kemnaker.go.id/storage/coverlattas/"+MagangItem.getFile()).into(imgVIew);
 
         return listViewItem;
     }

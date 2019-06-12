@@ -40,7 +40,7 @@ public class ListViewAdapterLembaga extends ArrayAdapter<LembagaItem> {
         TextView textViewJudul = listViewItem.findViewById(R.id.textViewJudul);
         TextView textViewTahun = listViewItem.findViewById(R.id.textViewTahun);
         TextView textViewTanggal = listViewItem.findViewById(R.id.textViewTanggal);
-        ImageView imgVIew = listViewItem.findViewById(R.id.Cover);
+        ImageView imgVIew = listViewItem.findViewById(R.id.imgVIew);
 
 
         LembagaItem LembagaItem = LembagaItemList.get(position);
@@ -48,8 +48,7 @@ public class ListViewAdapterLembaga extends ArrayAdapter<LembagaItem> {
         textViewJudul.setText(LembagaItem.getJudul());
         textViewTahun.setText(LembagaItem.getCreated_at());
         textViewTanggal.setText(LembagaItem.getTh_id());
-        textViewTanggal.setText(LembagaItem.getFile());
-        Glide.with(context).load(LembagaItem.getCover()).into(imgVIew);
+        Glide.with(context).load("https://buletinnaker.kemnaker.go.id/storage/coverlattas/"+LembagaItem.getFile()).into(imgVIew);
 
         return listViewItem;
     }

@@ -42,7 +42,7 @@ public class ListViewAdapterPpkk extends ArrayAdapter<PpkkItem> {
         TextView textViewJudul = listViewItem.findViewById(R.id.textViewJudul);
         TextView textViewTahun = listViewItem.findViewById(R.id.textViewTahun);
         TextView textViewTanggal = listViewItem.findViewById(R.id.textViewTanggal);
-        ImageView imgVIew = listViewItem.findViewById(R.id.Cover);
+        ImageView imgVIew = listViewItem.findViewById(R.id.imgVIew);
 
 
         PpkkItem PpkkItem = PpkkItemList.get(position);
@@ -50,8 +50,7 @@ public class ListViewAdapterPpkk extends ArrayAdapter<PpkkItem> {
         textViewJudul.setText(PpkkItem.getJudul());
         textViewTahun.setText(PpkkItem.getCreated_at());
         textViewTanggal.setText(PpkkItem.getTh_id());
-        textViewTanggal.setText(PpkkItem.getFile());
-        Glide.with(context).load(PpkkItem.getCover()).into(imgVIew);
+        Glide.with(context).load("https://buletinnaker.kemnaker.go.id/storage/coverpenta/"+PpkkItem.getFile()).into(imgVIew);
 
         return listViewItem;
     }

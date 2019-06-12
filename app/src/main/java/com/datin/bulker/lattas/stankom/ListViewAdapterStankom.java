@@ -40,7 +40,7 @@ public class ListViewAdapterStankom extends ArrayAdapter<StankomItem> {
         TextView textViewJudul = listViewItem.findViewById(R.id.textViewJudul);
         TextView textViewTahun = listViewItem.findViewById(R.id.textViewTahun);
         TextView textViewTanggal = listViewItem.findViewById(R.id.textViewTanggal);
-        ImageView imgVIew = listViewItem.findViewById(R.id.Cover);
+        ImageView imgVIew = listViewItem.findViewById(R.id.imgVIew);
 
 
         StankomItem StankomItem = StankomItemList.get(position);
@@ -48,8 +48,7 @@ public class ListViewAdapterStankom extends ArrayAdapter<StankomItem> {
         textViewJudul.setText(StankomItem.getJudul());
         textViewTahun.setText(StankomItem.getCreated_at());
         textViewTanggal.setText(StankomItem.getTh_id());
-        textViewTanggal.setText(StankomItem.getFile());
-        Glide.with(context).load(StankomItem.getCover()).into(imgVIew);
+        Glide.with(context).load("https://buletinnaker.kemnaker.go.id/storage/coverlattas/"+StankomItem.getFile()).into(imgVIew);
 
         return listViewItem;
     }
