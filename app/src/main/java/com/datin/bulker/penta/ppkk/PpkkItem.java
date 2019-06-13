@@ -87,6 +87,7 @@ public class PpkkItem implements Parcelable{
         this.created_at = in.readString();
         this.th_id = in.readString();
         this.cover = in.readString();
+        this.file = in.readString();
     }
 
     public static final Parcelable.Creator<com.datin.bulker.penta.ppkk.PpkkItem> CREATOR = new Parcelable.Creator<com.datin.bulker.penta.ppkk.PpkkItem>(){

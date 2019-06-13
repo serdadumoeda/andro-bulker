@@ -87,6 +87,7 @@ public class K3Item implements Parcelable{
         this.created_at = in.readString();
         this.th_id = in.readString();
         this.cover = in.readString();
+        this.file = in.readString();
     }
 
     public static final Parcelable.Creator<com.datin.bulker.k3.K3Item> CREATOR = new Parcelable.Creator<com.datin.bulker.k3.K3Item>(){

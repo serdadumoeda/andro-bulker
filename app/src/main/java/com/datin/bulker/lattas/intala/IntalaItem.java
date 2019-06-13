@@ -87,6 +87,7 @@ public class IntalaItem implements Parcelable{
         this.created_at = in.readString();
         this.th_id = in.readString();
         this.cover = in.readString();
+        this.file = in.readString();
     }
 
     public static final Parcelable.Creator<com.datin.bulker.lattas.intala.IntalaItem> CREATOR = new Parcelable.Creator<com.datin.bulker.lattas.intala.IntalaItem>(){

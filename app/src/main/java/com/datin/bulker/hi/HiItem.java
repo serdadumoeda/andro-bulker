@@ -87,6 +87,7 @@ public class HiItem implements Parcelable{
         this.created_at = in.readString();
         this.th_id = in.readString();
         this.cover = in.readString();
+        this.file = in.readString();
     }
 
     public static final Parcelable.Creator<HiItem> CREATOR = new Parcelable.Creator<HiItem>(){
