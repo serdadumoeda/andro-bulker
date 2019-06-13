@@ -5,7 +5,8 @@ import android.os.Parcelable;
 
 
 public class PasarKerjaItem implements Parcelable{
-    private String judul, deskripsi, th_id, created_at, cover, file;
+    private static String cover;
+    private String judul, deskripsi, th_id, created_at, file;
 
     public PasarKerjaItem(String judul, String deskripsi, String th_id, String created_at, String cover, String file ) {
         this.judul = judul;
@@ -33,7 +34,7 @@ public class PasarKerjaItem implements Parcelable{
         return created_at;
     }
 
-    public String getCover() {
+    public static String getCover() {
         return cover;
     }
 

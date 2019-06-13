@@ -11,6 +11,7 @@ import android.widget.ImageView;
 import android.widget.TextView;
 
 import com.bumptech.glide.Glide;
+import com.datin.bulker.BuletinView;
 import com.datin.bulker.Penta;
 import com.datin.bulker.R;
 import com.datin.bulker.penta.PasarKerjaItem;
@@ -23,7 +24,7 @@ public class DetailPasarKerja extends AppCompatActivity {
 
     public void lihat(View view){
         Intent intent= new Intent();
-        intent.setClass(DetailPasarKerja.this, PentaTenagaKerjaAsing.class);
+        intent.setClass(DetailPasarKerja.this, BuletinView.class);
         startActivity(intent);
     }
 
